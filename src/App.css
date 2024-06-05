@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('C:\\Users\\FAMILIA FABREGAS\\Desktop\\my-animated-app\\public\\backgroundpink.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-background {
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.open-modal-button, .show-butterflies-button, .modal-content button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.open-modal-button:hover, .show-butterflies-button:hover, .modal-content button:hover {
+  background-color: #ff1493;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+  color: black;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .animated-background, .Modal {
+    width: 95%;
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .title {
+    font-size: 2rem; /* Smaller font size for smaller devices */
+  }
+
+  .description, .modal-content p {
+    font-size: 1rem; /* Smaller font size for descriptions and modal content */
+  }
+
+  .open-modal-button, .show-butterflies-button, .modal-content button {
+    padding: 8px 16px; /* Smaller buttons for smaller screens */
+    font-size: 0.9rem; /* Smaller font size for buttons */
+  }
+}
+
+@keyframes heartRain {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url('https://emojicdn.elk.sh/💖');
+  background-size: contain;
+  animation: heartRain 10s linear infinite;
+}
+
+/* Cambia la posición, tamaño y otras propiedades según tus necesidades */
