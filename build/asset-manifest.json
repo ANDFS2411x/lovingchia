@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/lovingchia/static/css/main.c22a59ed.css",
+    "main.js": "/lovingchia/static/js/main.62736ff9.js",
+    "static/js/453.e3f53784.chunk.js": "/lovingchia/static/js/453.e3f53784.chunk.js",
+    "static/media/backgroundpink.jpg": "/lovingchia/static/media/backgroundpink.ee905adb38dd158ff1f7.jpg",
+    "index.html": "/lovingchia/index.html",
+    "main.c22a59ed.css.map": "/lovingchia/static/css/main.c22a59ed.css.map",
+    "main.62736ff9.js.map": "/lovingchia/static/js/main.62736ff9.js.map",
+    "453.e3f53784.chunk.js.map": "/lovingchia/static/js/453.e3f53784.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c22a59ed.css",
+    "static/js/main.62736ff9.js"
+  ]
+}
