@@ -21,7 +21,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    const audio = new Audio('./You Are My Life Audio.mp3'); // Ruta relativa al archivo de audio
+    const audio = new Audio(`${process.env.PUBLIC_URL}/You Are My Life Audio.mp3`); // Ruta relativa al archivo de audio
 
     const playAudio = () => {
       if (!audioPlayed) {
