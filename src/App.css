@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('C:\\Users\\FAMILIA FABREGAS\\Desktop\\my-animated-app\\public\\backgroundpink.jpg');
+  background-image: url('../public/backgroundpink.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

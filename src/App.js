@@ -1,17 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Modal from 'react-modal';
+import youaremylife from "./youaremylife.mp3";
 import './App.css';
 
 Modal.setAppElement('#root');
 
 const App = () => {
+  const audioRef = useRef(null);
+  // eslint-disable-next-line
+  const [playing, setPlaying] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [showButterflies, setShowButterflies] = useState(false);
-  const [audioPlayed, setAudioPlayed] = useState(false);
+  
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
+  
 
   const handleShowButterflies = () => {
     setShowButterflies(true);
@@ -19,25 +24,27 @@ const App = () => {
       setShowButterflies(false);
     }, 10000); // La animación de las mariposas dura 5 segundos
   };
-
+  const handleAudioPlay = () => {
+    console.log("audio playing...");
+    if (audioRef.current) {
+      audioRef.current.play();
+      setPlaying(true);
+    }
+  };
+  
   useEffect(() => {
-    const audio = new Audio('/You Are My Life Audio.mp3'); // Ruta relativa al archivo de audio
-
-    const playAudio = () => {
-      if (!audioPlayed) {
-        audio.play();
-        setAudioPlayed(true);
-      }
-    };
-
-    window.addEventListener('click', playAudio); // Espera a que el usuario haga clic en cualquier parte de la ventana
+    window.addEventListener("click", handleAudioPlay); // Espera a que el usuario haga clic en cualquier parte de la ventana
     return () => {
-      window.removeEventListener('click', playAudio); // Limpia el event listener cuando el componente se desmonte
+      window.removeEventListener("click", handleAudioPlay); // Limpia el event listener cuando el componente se desmonte
     };
-  }, [audioPlayed]);
+  }, []);
 
   return (
     <div className="App">
+      <audio ref={audioRef} preload="auto">
+        <source src={youaremylife} type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
       <motion.div
         className="animated-background"
         animate={{ backgroundColor: ["rgba(255, 105, 180, 0.5)", "rgba(152, 251, 152, 0.5)", "rgba(255, 105, 180, 0.5)"] }}
