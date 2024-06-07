@@ -33,16 +33,8 @@ const App = () => {
   };
   
   useEffect(() => {
-    const audio = new Audio('/You Are My Life Audio.mp3'); // Ruta relativa al archivo de audio
-
-    const playAudio = () => {
-      if (!audioPlayed) {
-        audio.play();
-        setAudioPlayed(true);
-      }
-    };
-
-    window.addEventListener('click', playAudio); // Espera a que el usuario haga clic en cualquier parte de la ventana
+    
+    window.addEventListener('click', handleAudioPlay); // Espera a que el usuario haga clic en cualquier parte de la ventana
     return () => {
       window.removeEventListener("click", handleAudioPlay); // Limpia el event listener cuando el componente se desmonte
     };
